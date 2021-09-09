@@ -17,10 +17,6 @@ func Constructor() Trie {
 	return Trie{}
 }
 
-func (this *Trie) put(word string)  {
-	//this.links = append(this.links,Trie{})
-}
-
 /** Inserts a word into the trie. */
 func (this *Trie) Insert(word string)  {
 	cur := this
@@ -123,46 +119,4 @@ func replaceWords(dictionary []string, sentence string) string {
 	}
 
 	return strings.Join(t, " ")
-}
-
-
-type WordDictionary struct {
-	children [26]*WordDictionary
-	isWord bool
-}
-
-
-/** Initialize your data structure here. */
-func Constructor() WordDictionary {
-	return WordDictionary{}
-}
-
-
-func (this *WordDictionary) AddWord(word string)  {
-	cur := this
-	for i,s := range word {
-		 c := s - 'a'
-		if cur.children[c] == nil {
-			cur.children[c] = &WordDictionary{}
-		}
-		cur := cur.children[c]
-		if i == len(word) - 1 {
-			cur.isWord = true
-		}
-	}
-}
-
-
-func (this *WordDictionary) Search(word string) bool {
-	status := true
-	cur := this
-	x
-	for i,s := range word{
-		if s == '.' {
-
-		}else{
-
-		}
-	}
-	return status
 }
